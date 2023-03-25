@@ -1,0 +1,50 @@
+﻿1.- Nombres del proyecto
+PatronMCV
+
+2.- Tipos de ptatones de diseño
+Patron de diseño MCV
+
+3 .- pases del proyecto
+Principalmente creamos una clase donde definimos un objeto en esta caso departamentos 
+
+en la clase desarollamos los que son las caracteristicas de un departamendo que seria habitacion, baño y ubicacion
+agreganmos tambien ahi para nuesta base de datos un id que se valla incrementando en nuestra base de datos
+
+Creamos otra classe departamentoContext donde se ase la comunicacion de la clase departamento y lo que va a
+realizar la conexion con la base de datos
+
+nos iremos a la parte del appsetting donde realizaremos la conexion de forma mas segura con la base de datos y 
+nos de acceso mas facil
+
+abriremos administrado de paquetes nugget y usaremos su consola para crear la base de datos desde ahi con los 
+datos creados en la clase departamento 
+
+con el commando add-Migration se creara la base de datos y update-database refrescaremos y revisaremos que se
+creara en nuestro sql
+
+cuando requeramos agregar otro campo a nuestro objeto y tabla asignaremos en departamento el nuevo campo 
+en este caso costos le podremos su tipo de dato y en la terminal de nuget la agregamos con el siguiente
+comando add-Migration AgregamoscolumnaCostos esto nos hara saber que agremos otro campo y creara un nuevo 
+archivo 
+
+se refresca la base de de datos con el commando  update-database en la terminal de nugget y veremos reflegado
+ya nuestro campo costos.
+
+3.1paqueterias nuggets
+
+aqui tambien usaremos paqueterias nuggets que son EntityFrameworkCore.Sqlserver para la conexion y
+EntityFrameworkCore.tools para las herramientas
+
+3.2 errores cometidos y como lo solucionamos 
+
+los principales errores que cometi fueron el de dbset redirecione la misma clase departamento.contex en
+ves de aver redirecionado a la clase departamento y realizar la conexion de forma correcta
+
+otro errer que cometi fue que en la cadena de conexion con al base de datos ubicada en departamentosContext
+llevara al principio data sourse en cambio en el appsetting la cadena de conexion llevara server sourse y yo
+ambas las tenia en data sourse
+
+el siguiente error fue que la especificacion TrustServerCertificate=True en la cadena de conexion segura del 
+appseting no contaba con ella
+
+
